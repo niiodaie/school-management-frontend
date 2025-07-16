@@ -1,8 +1,15 @@
+import { useNavigate } from 'react-router-dom'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { School, ArrowRight } from 'lucide-react'
 
 export default function SchoolOnboardingPage() {
+  const navigate = useNavigate()
+
+  const handleStart = () => {
+    navigate('/onboarding/school-profile') // This should match your next step route
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 p-4">
       <Card className="w-full max-w-md">
@@ -22,7 +29,7 @@ export default function SchoolOnboardingPage() {
             This onboarding flow would guide you through setting up your school profile, 
             adding initial users, and configuring your system preferences.
           </p>
-          <Button className="w-full">
+          <Button onClick={handleStart} className="w-full">
             Get Started
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
@@ -31,4 +38,3 @@ export default function SchoolOnboardingPage() {
     </div>
   )
 }
-
