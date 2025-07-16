@@ -21,6 +21,7 @@ import DocumentsPage from '@/pages/documents/DocumentsPage'
 import AnnouncementsPage from '@/pages/announcements/AnnouncementsPage'
 import MessagesPage from '@/pages/messages/MessagesPage'
 import SettingsPage from '@/pages/settings/SettingsPage'
+import SignupPage from '@/pages/auth/SignupPage'
 import './App.css'
 
 function AppContent() {
@@ -41,6 +42,7 @@ function AppContent() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/onboarding" element={<SchoolOnboardingPage />} />
         <Route path="*" element={<Navigate to="/login" replace />} />
+        <Route path="/signup" element={<SignupPage />} />
       </Routes>
     )
   }
