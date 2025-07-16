@@ -1,3 +1,4 @@
+import SchoolProfileStep from '@/pages/onboarding/SchoolProfileStep'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { Toaster } from '@/components/ui/sonner'
@@ -53,6 +54,7 @@ function AppContent() {
           <Routes>
             <Route path="/" element={<DashboardPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/onboarding/school-profile" element={<SchoolProfileStep />} />
             <Route path="/students" element={<StudentsPage />} />
             <Route path="/teachers" element={<TeachersPage />} />
             <Route path="/classes" element={<ClassesPage />} />
