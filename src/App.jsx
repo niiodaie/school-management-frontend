@@ -22,6 +22,7 @@ import AnnouncementsPage from '@/pages/announcements/AnnouncementsPage'
 import MessagesPage from '@/pages/messages/MessagesPage'
 import SettingsPage from '@/pages/settings/SettingsPage'
 import SignupPage from '@/pages/auth/SignupPage'
+import ResetPasswordPage from '@/pages/auth/ResetPassword';
 import './App.css'
 
 function AppContent() {
@@ -43,6 +44,7 @@ function AppContent() {
         <Route path="/onboarding" element={<SchoolOnboardingPage />} />
         <Route path="*" element={<Navigate to="/login" replace />} />
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
       </Routes>
     )
   }
