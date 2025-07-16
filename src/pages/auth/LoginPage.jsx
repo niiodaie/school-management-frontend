@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Separator } from '@/components/ui/separator'
 import { School, Mail, Lock, Eye, EyeOff, AlertCircle } from 'lucide-react'
+import { demoCredentials } from '@/lib/demoCredentials';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
