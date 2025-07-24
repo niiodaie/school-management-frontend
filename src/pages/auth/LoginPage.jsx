@@ -8,7 +8,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Separator } from '@/components/ui/separator'
 import { School, Mail, Lock, Eye, EyeOff, AlertCircle } from 'lucide-react'
-import { demoCredentials } from '@/lib/demoCredentials';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -39,38 +38,17 @@ export default function LoginPage() {
   }
 
   const handleDemoLogin = (role) => {
- const demoCredentials = {
-  admin: {
-    email: 'admin@greenwood.edu',
-    password: 'admin123'
-  },
-  teacher: {
-    email: 'teacher@greenwood.edu',
-    password: 'teacher123'
-  },
-  parent: {
-    email: 'parent@greenwood.edu',
-    password: 'parent123'
-  },
-  student: {
-    email: 'student@greenwood.edu',
-    password: 'student123'
+    const demoCredentials = {
+      admin: { email: 'admin@greenwood.edu', password: 'admin123' },
+      teacher: { email: 'teacher@greenwood.edu', password: 'teacher123' },
+      parent: { email: 'parent@greenwood.edu', password: 'parent123' },
+      student: { email: 'student@greenwood.edu', password: 'student123' }
+    }
+    
+    const creds = demoCredentials[role]
+    setEmail(creds.email)
+    setPassword(creds.password)
   }
-};
-
-  const creds = demoCredentials[role];
-
-  if (!creds) {
-    console.warn(`Unknown demo role: ${role}`);
-    return;
-  }
-
-  setEmail(creds.email);
-  setPassword(creds.password);
-
-  // Optionally trigger login automatically:
-  // handleSubmit({ preventDefault: () => {} });
-};
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 p-4">

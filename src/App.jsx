@@ -1,4 +1,3 @@
-import SchoolProfileStep from '@/pages/onboarding/SchoolProfileStep'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { Toaster } from '@/components/ui/sonner'
@@ -21,8 +20,6 @@ import DocumentsPage from '@/pages/documents/DocumentsPage'
 import AnnouncementsPage from '@/pages/announcements/AnnouncementsPage'
 import MessagesPage from '@/pages/messages/MessagesPage'
 import SettingsPage from '@/pages/settings/SettingsPage'
-import SignupPage from '@/pages/auth/SignupPage'
-import ResetPasswordPage from '@/pages/auth/ResetPassword';
 import './App.css'
 
 function AppContent() {
@@ -43,8 +40,6 @@ function AppContent() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/onboarding" element={<SchoolOnboardingPage />} />
         <Route path="*" element={<Navigate to="/login" replace />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/reset-password" element={<ResetPasswordPage />} />
       </Routes>
     )
   }
@@ -58,7 +53,6 @@ function AppContent() {
           <Routes>
             <Route path="/" element={<DashboardPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
-            <Route path="/onboarding/school-profile" element={<SchoolProfileStep />} />
             <Route path="/students" element={<StudentsPage />} />
             <Route path="/teachers" element={<TeachersPage />} />
             <Route path="/classes" element={<ClassesPage />} />
